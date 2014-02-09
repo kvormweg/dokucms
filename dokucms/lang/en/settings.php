@@ -9,5 +9,6 @@
 $lang['sidebar'] = 'sidebar content';
 $lang['cleanindex'] = 'clean index';
 $lang['showsearch'] = 'show search box if logged in';
+$lang['showbacklinks'] = 'show backlink button';
 $lang['sidebaredit'] = 'show edit-button in sidebar';
 ?>

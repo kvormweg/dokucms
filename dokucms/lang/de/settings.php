@@ -9,5 +9,6 @@
 $lang['sidebar'] = 'Inhalt des Sidebars: Index oder Datei';
 $lang['cleanindex'] = 'Index bereinigen';
 $lang['showsearch'] = 'Suchfeld anzeigen, wenn angemeldet';
+$lang['showbacklinks'] = 'Backlink-Knopf anzeigen';
 $lang['sidebaredit'] = 'Edit-Button im Sidebar anzeigen';
 ?>

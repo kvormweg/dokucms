@@ -179,7 +179,7 @@ div.dokuwiki button.button {
   vertical-align: middle;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.95em;
+  font-size: 0.8em;
   cursor: pointer;
   margin: 1px;
   padding: 0.125em 0.4em;
@@ -187,7 +187,7 @@ div.dokuwiki button.button {
 
 * html div.dokuwiki input.button,
 * html div.dokuwiki button.button {
-  height: 1.8em;
+  height: 1.5em;
 }
 
 div.dokuwiki div.secedit input.button {
@@ -202,6 +202,10 @@ div.dokuwiki div.secedit input.button {
   cursor: pointer;
   float: right;
   display: inline;
+}
+
+div.dokuwiki input#qsearch__in {
+  font-size: 0.825em;
 }
 
 /* ----------- page navigator ------------- */

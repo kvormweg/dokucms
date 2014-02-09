@@ -9,5 +9,6 @@
 $lang['sidebar'] = 'flankilara enhavo';
 $lang['cleanindex'] = 'neta indekso';
 $lang['showsearch'] = 'montri serĉ-kadron kiam ensalutite';
+$lang['showbacklinks'] = 'show backlink button';
 $lang['sidebaredit'] = 'montri redakt-butonon en flankilaro';
 ?>
