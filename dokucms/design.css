@@ -16,6 +16,7 @@ body {
   background-color: __background__;
   color: __text__;
   line-height: 1.4em;
+  text-align: left;
 }
 
 div.dokuwiki table {
@@ -63,6 +64,10 @@ div.dokuwiki label.simple {
   text-align: left;
   font-weight: normal;
 }
+div.dokuwiki label.block input.edit {
+  width: 50%;
+}
+
 div.dokuwiki fieldset {
   width: 24em;
   text-align: center;
@@ -360,8 +365,8 @@ div.dokuwiki h5 {
     background-color: inherit;
     font-size: 100%;
     font-weight: bold;
-    margin: 0.5em 0 0.2em 0;
-    padding: 0.5em 0 0 0;
+    margin: 0 0 0.2em 0;
+    padding: 0;
 }
 
 /* special headlines */
@@ -588,7 +593,7 @@ div.dokuwiki div.fn {
 }
 
 div.dokuwiki a.fn_top {
-  vertical-align: super;
+/*  vertical-align: super; */
   font-size: 80%;
 }
 

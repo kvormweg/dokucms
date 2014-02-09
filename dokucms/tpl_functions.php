@@ -6,9 +6,12 @@
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author  Michael Klier <chi@chimeric.de>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
+
+
  */
 
-if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
+// must be run from within DokuWiki
+if (!defined('DOKU_INC')) die();
 
 /**
  * Prints the sidebars
@@ -21,25 +24,74 @@ function tpl_sidebar($pos) {
     global $REV;
     global $INFO;
 
-    $sb = 'index';
+    if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
+    $pname = 'sidebar';
+
     $svID  = $ID;   // save current ID
-    $svREV = $REV;  // save current REV 
+//    $svREV = $REV;  // save current REV 
 
-    print '<div class="sidebar_box">' . DOKU_LF;
-    print '  ' . p_index_xhtml($svID,$pos) . DOKU_LF;
-    print '</div>' . DOKU_LF;
+    switch($conf['tpl']['dokucms']['sidebar']) {
 
+      case 'file':
+        $ns_sb = _getNsSb($svID);
+        if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
+            print '<div class="sidebar_box">' . DOKU_LF;
+            print p_sidebar_xhtml($ns_sb,$pos) . DOKU_LF;
+            print '</div>' . DOKU_LF;
+         } elseif(@file_exists(wikiFN($pname)) && auth_quickaclcheck($pname) >= AUTH_READ) {
+            print '<div class="sidebar_box">' . DOKU_LF;
+            print p_sidebar_xhtml($pname,$pos) . DOKU_LF;
+            print '</div>' . DOKU_LF;
+        }
+        break;   
+			default:
+    			print '<div class="sidebar_box">' . DOKU_LF;
+    			print '  ' . p_index_xhtml($svID,$pos) . DOKU_LF;
+    			print '</div>' . DOKU_LF;
+	 }	
     // restore ID and REV
     $ID  = $svID;
-    $REV = $svREV;
+//    $REV = $svREV;
+}
+
+/**
+ * searches for namespace sidebars
+ */
+function _getNsSb($id) {
+    $pname = 'sidebar';
+    $ns_sb = '';
+    $path  = explode(':', $id);
+    
+    while(count($path) > 0) {
+        $ns_sb = implode(':', $path).':'.$pname;
+        if(@file_exists(wikiFN($ns_sb))) return $ns_sb;
+        array_pop($path);
+    }
+    
+    // nothing found
+    return false;
+}
+
+/**
+ * Removes the TOC of the sidebar pages and 
+ * shows a edit button if the user has enough rights
+ *
+ */
+function p_sidebar_xhtml($sb,$pos) {
+  global $conf;
+  $data = p_wiki_xhtml($sb,'',false);
+  if(auth_quickaclcheck($sb) >= AUTH_EDIT and $conf['tpl']['dokucms']['sidebaredit']) {
+    $data .= '<div class="secedit">'.html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')).'</div>';
+  }
+  // strip TOC
+  $data = preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
+  // replace headline ids for XHTML compliance
+  $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3', $data);
+  return ($data);
 }
 
 /**
  * Renders the Index
- *
- * copy of html_index located in /inc/html.php
- *
- * TODO update to new AJAX index possible?
  *
  */
 function p_index_xhtml($ns,$pos) {
@@ -61,6 +113,19 @@ function p_index_xhtml($ns,$pos) {
 
   $data = array();
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
+  $data2 = array();
+  foreach($data as $item) {
+    if($conf['tpl']['dokucms']['cleanindex']) {
+      if($item['id'] == 'playground' or $item['id'] == 'wiki') {
+        continue;
+      }
+    }
+    if($item['id'] == 'sidebar' or $item['id'] == $conf['start']) {
+      continue;
+    }
+    $data2[] = $item;
+  }  
+  $data = $data2;
 # print index with empty items removed  
   print preg_replace('#<li class="level[0-9]" style="list-style-type:none;"><div class="li"></div></li>#','',preg_replace('/li class="level(\d)"/', 'li class="level$1" style="list-style-type:none;"', html_buildlist($data,'idx','_html_list_index','html_li_index')));
 }
@@ -88,11 +153,7 @@ function _html_list_index($item){
       $ret .= '</a>';
     }
   } else {
-# Do not show start page in menu    
-    $match = '/' . $conf['start'] . '$/';
-    if(!preg_match($match, $item['id'])) {
-      $ret .= html_wikilink(':'.$item['id']);
-	 }
+    $ret .= html_wikilink(':'.$item['id']);
   }
   return $ret;
 }

@@ -18,14 +18,14 @@ div.dokuwiki .header {
 }
 
 div.dokuwiki .pagename {
-  height: 2em;
+  height: 1.6em;
   float: left;
   font-size: 250%;
   font-weight: bolder;
   color: __background_alt__;
   text-align: left;
   vertical-align: middle;
-  padding: 0.6em 0 0 7.65em;
+  padding: 1em 0 0 7.65em;
   background: transparent url(images/__yourlogo__) no-repeat bottom left;
 }
 
@@ -65,7 +65,7 @@ div.dokuwiki div.stylefoot {
   width: 100%;
   clear: both;
   color: __text_alt__;
-  height: 1.75em;
+  height: 3em;
 }
 
 div.dokuwiki div.stylefoot div.homelink {
@@ -86,9 +86,7 @@ div.dokuwiki div.stylefoot div.meta {
   background-color: __background__;
 }
 
-
 /* the document area */
-
 div.dokuwiki div.wrap {
   width: 100%;
   overflow: hidden;
@@ -101,18 +99,39 @@ div.dokuwiki div.sidebar {
   float: left;
   width: 16em;
   background-color: __background_alt__;
+  color: #ccc;
+  overflow: hidden;
+}
+
+div.dokuwiki div.sidebar  div.secedit input.button {
+  background-color: __background_alt__;
+  color: #ccc;
+  float: left;
+  margin-left: 0.75em;
 }
 
 div.dokuwiki div.sidebar div.sidebar_box {
-  padding: 1.5em 0.5em 0 0.5em;
+  padding: 1.75em 0.5em 2em 0.5em;
 }
-
-
+div.dokuwiki div.sidebar div.sidebar_box h1 {
+  margin-top: -1.1em;
+  border-bottom-style: none;
+}
+div.dokuwiki div.sidebar div.sidebar_box h1 a {
+  color: #ccc !important;
+}
+div.dokuwiki div.sidebar h2, div.dokuwiki div.sidebar h3, div.dokuwiki div.sidebar h4, div.dokuwiki div.sidebar h5 {
+  margin-top: -0.4em;
+  color: #ccc;
+}
+div.dokuwiki div.sidebar div.level5, div.dokuwiki div.sidebar div.level4, div.dokuwiki div.sidebar div.level3, div.dokuwiki div.sidebar div.level2 {
+  margin-left: 0;
+}
 /* the document */
 div.dokuwiki div.page {
   margin-left: 18em;
   max-width: 60em;
-  padding: 0.2em 1em 0 1em;
+  padding: 2.2em 1em 0 1.5em;
   background-color: transparent;
 }
 

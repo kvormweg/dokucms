@@ -108,9 +108,14 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           &nbsp;
        </div>
        <div class="bar-right" id="bar__bottomright">
-   <?php if(!$_SERVER['REMOTE_USER'] && $ACT != 'login' && $ACT != 'logout'){ ?>
-           <?php tpl_searchform()?>&nbsp;
+   <?php if(!$_SERVER['REMOTE_USER'] && $ACT != 'login' && $ACT != 'logout'){ ?> 
+     <?php if(!$conf['tpl']['dokucms']['showsearch']) { ?>  
+       <?php tpl_searchform()?>&nbsp;
+     <?php }?>
    <?php }?>
+     <?php if($conf['tpl']['dokucms']['showsearch']) { ?>  
+           <?php tpl_searchform()?>&nbsp;
+     <?php } ?>
            <?php tpl_button('edit')?>&nbsp;
       </div>
       <div class="clearer"></div>
