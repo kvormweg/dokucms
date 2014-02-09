@@ -165,6 +165,18 @@ div.dokuwiki div#draft__status {
   float: right;
   color: __text_alt__;
 }
+
+div.dokuwiki div.license {
+  padding: 0.5em;
+  font-size: 90%;
+  text-align: center;
+}
+
+div.dokuwiki form#dw__editform div.license {
+  clear: left;
+  font-size: 90%;
+}
+
 div.dokuwiki a#vorschau {
   display: block;
   clear: both;
@@ -442,6 +454,7 @@ div.dokuwiki blockquote {
 }
 
 div.dokuwiki pre {
+  font-family: monospace;
   font-size: 120%;
   padding: 0.5em;
   border: 1px dashed __border__;
@@ -497,6 +510,12 @@ div.dokuwiki dl.code dt {
 div.dokuwiki dl.file dt {
     background-color: __background_alt__;
     border-bottom: 1px solid __background_alt__;
+}
+
+
+/* inline code words */
+div.dokuwiki code {
+  font-size: 120%;
 }
 
 /* inline tables */
@@ -653,14 +672,7 @@ div.dokuwiki div.fn {
   font-size: 90%;
 }
 
-div.dokuwiki a.fn_top {
-/*  vertical-align: super; */
-  font-size: 80%;
-}
-
 div.dokuwiki a.fn_bot {
-  vertical-align: super;
-  font-size: 80%;
   font-weight: bold;
 }
 
@@ -673,6 +685,7 @@ div.insitu-footnote {
   text-align: left;
   padding: 4px;
   max-width: 40%;    /* IE's width is handled in javascript */
+  min-width: 5em;
 }
 
 /* overcome IE issue with one line code or file boxes which require h. scrolling */
@@ -722,12 +735,12 @@ div.dokuwiki ul.search_quickhits {
 
 div.dokuwiki ul.search_quickhits li {
   margin: 0 1.0em 0 1.0em;
-  float:left;
+  float: left;
   width: 30%;
 }
 
-div.dokuwiki div.section_highlight {
-  background-color: __background_alt__;
+div.dokuwiki .section_highlight {
+  background-color: __background_alt__ !important;
 }
 
 /* ------------------ Additional ---------------------- */
@@ -739,10 +752,10 @@ div.footerinc {
     opacity: 0.5;
     border: 0;
 }
+
 .footerinc a:hover img {
     opacity: 1;
 }
-
 
 /* ---------- AJAX quicksearch ----------- */
 

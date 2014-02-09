@@ -62,7 +62,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php }?>
 
   </div>
-  <?php flush()?>
+  <?php tpl_flush()?>
 
   <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'login' && $ACT != 'logout' && $ACT != 'profile' && $ACT != 'revisions') { ?>
   <div class="wrap">
@@ -105,7 +105,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 			   <?php tpl_button('login')?>&nbsp;
 			<?php }?>
 			<?php if($_SERVER['REMOTE_USER']){ ?>
-			   <?php tpl_button('subscription')?>
+			   <?php tpl_button('subscribe')?>
 			   <?php tpl_button('profile')?>
 			   <?php tpl_button('history')?>
          <?php tpl_button('revert')?>
@@ -130,11 +130,11 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     </div>
 
   </div>
-	<?php tpl_license(false);?>
+
+  <?php tpl_license(false);?>
 
 </div>
 
 <div class="no"><?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug()?></div>
 </body>
 </html>
-
