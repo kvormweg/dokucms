@@ -11,5 +11,6 @@ $meta['sidebar'] = array('multichoice', '_choices' => array('file', 'index'));
 $meta['cleanindex'] = array('onoff');
 $meta['showsearch'] = array('onoff');
 $meta['showbacklinks'] = array('onoff');
+$meta['showmedia'] = array('onoff');
 $meta['sidebaredit'] = array('onoff');
 ?>
