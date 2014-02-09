@@ -26,8 +26,8 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   </title>
 
   <?php tpl_metaheaders()?>
+  <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 <!--[if lt IE 7]>
    <style type="text/css">
       div.page { width: 55em !important; }
@@ -106,6 +106,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 			<?php }?>
 			<?php if($_SERVER['REMOTE_USER']){ ?>
 			   <?php tpl_button('subscribe')?>
+               <?php tpl_button('media')?>
 			   <?php tpl_button('profile')?>
 			   <?php tpl_button('history')?>
          <?php tpl_button('revert')?>

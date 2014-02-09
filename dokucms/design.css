@@ -78,8 +78,10 @@ div.dokuwiki fieldset {
 }
 
 div.dokuwiki textarea.edit {
-  font-family: monospace;
-/*  font-size: 1.1em; */
+  font-family: monospace, serif;
+  /* second generic font fixes problem with font-size, see
+     http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/ */
+  font-size: 100%;
   color: __text__;
   background-color: __background__;
   border: 1px solid __border__;
@@ -167,14 +169,16 @@ div.dokuwiki div#draft__status {
 }
 
 div.dokuwiki div.license {
-  padding: 0.5em;
-  font-size: 90%;
+  font-size: 75%;
+  color: __text__ !important;
+  padding: 0 0.5em 1em 0.5em;
   text-align: center;
 }
 
 div.dokuwiki form#dw__editform div.license {
   clear: left;
-  font-size: 90%;
+  padding-left: 0;
+  text-align: left;
 }
 
 div.dokuwiki a#vorschau {
@@ -244,6 +248,12 @@ div.dokuwiki div.pagenav-next {
     text-align: left;
     float: right;
     width: 49%
+}
+
+/* ----------- type of recent changes select -------- */
+
+div.dokuwiki form#dw__recent select {
+    margin-bottom: 10px;
 }
 
 /* --------------- Links ------------------ */
@@ -448,10 +458,12 @@ div.dokuwiki ol ol ol ol {list-style-type: lower-greek;}
 
 div.dokuwiki li.open {
   list-style-image: url(images/open.gif);
+    /*list-style-type: circle;*/
 }
 
 div.dokuwiki li.closed {
   list-style-image: url(images/closed.gif);
+    /*list-style-type: disc;*/
 }
 
 div.dokuwiki blockquote {
@@ -485,7 +497,7 @@ div.dokuwiki pre.code {
 
 /* code blocks by file tag */
 div.dokuwiki pre.file {
-  background-color: __background_alt__;
+  background-color: __background_pre__;
 }
 
 /* filenames for file and code blocks */
@@ -505,7 +517,8 @@ div.dokuwiki dl.code dt {
 
 div.dokuwiki dl.code dt a,
 div.dokuwiki dl.file dt a {
-    color: __text__;
+    color: __text_alt__;
+    font-weight: bold;
 }
 
 div.dokuwiki dl.code dt {
@@ -514,8 +527,8 @@ div.dokuwiki dl.code dt {
 }
 
 div.dokuwiki dl.file dt {
-    background-color: __background_alt__;
-    border-bottom: 1px solid __background_alt__;
+    background-color: __background_pre__;
+    border-bottom: 1px solid __background_pre__;
 }
 
 /* inline code words */
@@ -877,22 +890,11 @@ th, .tocheader  {
   color: __existing__;
 }
 
-pre.file {
-  background-color: __background_neu__ !important;
-}
-
 legend  {
   color: __text_alt__ !important;
   font-weight: bold;
   background-color: __background_alt__;
   padding: 0 0.5em;
-}
-.license  {
-  clear:both;
-  text-align: center;
-  color: __text__ !important;
-  padding: 0 0.5em 1em 0.5em;
-  font-size: 75%;
 }
 
 /* blog plugin compatibility */

@@ -1,3 +1,8 @@
+/**
+ * CSS styles for printed output
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ */
 
 body {
   font: 10pt Times,'Times New Roman',serif;
@@ -43,6 +48,9 @@ div.error,
 div.breadcrumbs,
 div.homelink,
 div.sidebar,
+div.bar,
+div.no,
+div.pagename,
 div.secedit {
   display: none;
 }
@@ -244,5 +252,11 @@ table.inline td {
   text-align: right;
 }
 
-.toc, .footerinc, .header, .bar, .user { display: none; }
+.button {
+	font-size: 0.3em;
+}
+
+.toc, .footerinc, .header, .user { 
+	display: none; 
+}
 
