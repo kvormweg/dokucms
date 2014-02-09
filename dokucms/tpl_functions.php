@@ -109,7 +109,7 @@ function dokucms_pageinfo(){
   if (!auth_quickaclcheck($ID)) { return; }
   
   // prepare date and path
-  $date = date($conf['dformat'],$INFO['lastmod']);
+  $date = strftime($conf['dformat'],$INFO['lastmod']);
 
   // print it
   if($INFO['exists']){

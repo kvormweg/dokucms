@@ -96,8 +96,6 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <div class="bar" id="bar__bottom">
        <div class="bar-left" id="bar__bottomleft">
-   <?php if($_SERVER['REMOTE_USER']){ ?>
-   <?php }?>
            <?php tpl_button('admin')?>
    <?php if($ACT != 'login' && $ACT != 'logout') { ?>        
            <?php tpl_button('login')?>&nbsp;
@@ -112,9 +110,8 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
        <div class="bar-right" id="bar__bottomright">
    <?php if(!$_SERVER['REMOTE_USER'] && $ACT != 'login' && $ACT != 'logout'){ ?>
            <?php tpl_searchform()?>&nbsp;
-   <?php } else {?>
-           <?php tpl_button('edit')?>&nbsp;
    <?php }?>
+           <?php tpl_button('edit')?>&nbsp;
       </div>
       <div class="clearer"></div>
     </div>
