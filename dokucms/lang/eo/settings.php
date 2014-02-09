@@ -8,8 +8,9 @@
 
 $lang['sidebar'] = 'flankilara enhavo';
 $lang['cleanindex'] = 'neta indekso';
+$lang['cleanindexlist'] = 'neta indekso de kromaj nomspacoj (komo-apartita listo)';
 $lang['showsearch'] = 'montri serĉ-kadron kiam ensalutite';
-$lang['showbacklinks'] = 'show backlink button';
-$lang['showmedia'] = 'show media manager button if not logged in';
-$lang['sidebaredit'] = 'montri redakt-butonon en flankilaro';
+$lang['showbacklinks'] = 'montri retroligajn butonojn';
+$lang['showmedia'] = 'montri aŭdvid-administran butonon se ne ensalutita';
+$lang['sidebaredit'] = 'montri redaktan butonon en flankilaro';
 ?>

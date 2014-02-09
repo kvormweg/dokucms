@@ -7,9 +7,10 @@
  */
 
 $lang['sidebar'] = 'conteúdo da barra lateral';
-$lang['cleanindex'] = 'índice claro';
+$lang['cleanindex'] = 'índice limpo';
+$lang['cleanindexlist'] = 'índice limpo de outros espaços de nome (lista separada por vírgula)';
 $lang['showsearch'] = 'mostrar caixa de procura quando logado';
-$lang['showbacklinks'] = 'show backlink button';
-$lang['showmedia'] = 'show media manager button if not logged in';
+$lang['showbacklinks'] = 'mostrar botão de retroligação';
+$lang['showmedia'] = 'mostrar botão administrador de mídia se não logado';
 $lang['sidebaredit'] = 'mostrar botão de edição na barra lateral';
 ?>
