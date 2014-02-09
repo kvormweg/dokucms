@@ -6,8 +6,6 @@
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author  Michael Klier <chi@chimeric.de>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
-
-
  */
 
 // must be run from within DokuWiki
@@ -26,13 +24,13 @@ function tpl_sidebar($pos) {
 
     if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
     $pname = 'sidebar';
+    
+    $tpl = $conf['template'];
 
     $svID  = $ID;   // save current ID
 //    $svREV = $REV;  // save current REV 
 
-    switch($conf['tpl']['dokucms']['sidebar']) {
-
-      case 'file':
+    if($conf['tpl'][$tpl]['sidebar']== 'file')  {
         $ns_sb = _getNsSb($svID);
         if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
             print '<div class="sidebar_box">' . DOKU_LF;
@@ -43,8 +41,7 @@ function tpl_sidebar($pos) {
             print p_sidebar_xhtml($pname,$pos) . DOKU_LF;
             print '</div>' . DOKU_LF;
         }
-        break;   
-			default:
+   } else {
     			print '<div class="sidebar_box">' . DOKU_LF;
     			print '  ' . p_index_xhtml($svID,$pos) . DOKU_LF;
     			print '</div>' . DOKU_LF;
@@ -79,8 +76,9 @@ function _getNsSb($id) {
  */
 function p_sidebar_xhtml($sb,$pos) {
   global $conf;
+  $tpl = $conf['template'];
   $data = p_wiki_xhtml($sb,'',false);
-  if(auth_quickaclcheck($sb) >= AUTH_EDIT and $conf['tpl']['dokucms']['sidebaredit']) {
+  if(auth_quickaclcheck($sb) >= AUTH_EDIT and $conf['tpl'][$tpl]['sidebaredit']) {
     $data .= '<div class="secedit">'.html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')).'</div>';
   }
   // strip TOC
@@ -99,28 +97,31 @@ function p_index_xhtml($ns,$pos) {
   global $conf;
   global $ID;
   $dir = $conf['datadir'];
+  $tpl = $conf['template'];
+  if(isset($conf['start'])) {
+    $start = $conf['start'];
+  } else {
+    $start = 'start';
+  }
+
   $ns  = cleanID($ns);
-  #fixme use appropriate function
+# fixme use appropriate function
   if(empty($ns)){
     $ns = dirname(str_replace(':','/',$ID));
     if($ns == '.') $ns ='';
   }
   $ns  = utf8_encodeFN(str_replace(':','/',$ns));
 
-// extract only the headline
-//  preg_match('/<h1>.*?<\/h1>/', p_locale_xhtml('index'), $match);
-//  print preg_replace('#<h1(.*?id=")(.*?)(".*?)h1>#', '<h1\1sidebar_'.$pos.'_\2\3h1>', $match[0]);
-
   $data = array();
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
   $data2 = array();
   foreach($data as $item) {
-    if($conf['tpl']['dokucms']['cleanindex']) {
+    if($conf['tpl'][$tpl]['cleanindex']) {
       if($item['id'] == 'playground' or $item['id'] == 'wiki') {
         continue;
       }
     }
-    if($item['id'] == 'sidebar' or $item['id'] == $conf['start']) {
+    if($item['id'] == 'sidebar' or $item['id'] == $start or preg_match('/:'.$start.'$/',$item['id'])) {
       continue;
     }
     $data2[] = $item;
@@ -140,17 +141,11 @@ function _html_list_index($item){
   global $ID;
   global $conf;
   $ret = '';
-  $base = ':'.$item['id'];
-  $base = substr($base,strrpos($base,':')+1);
   if($item['type']=='d'){
     if(@file_exists(wikiFN($item['id'].':'.$conf['start']))) {
-      $ret .= '<a href="'.wl($item['id'].':'.$conf['start']).'" class="idx_dir">';
-      $ret .= $base;
-      $ret .= '</a>';
+      $ret .= html_wikilink($item['id'].':'.$conf['start']);
     } else {
-      $ret .= '<a href="'.wl($ID,'idx='.$item['id']).'" class="idx_dir">';
-      $ret .= $base;
-      $ret .= '</a>';
+      $ret .= html_wikilink($item['id'].':');
     }
   } else {
     $ret .= html_wikilink(':'.$item['id']);
@@ -195,6 +190,4 @@ function dokucms_pageinfo(){
   }
   return false;
 }
-
-//Setup vim: ts=4 sw=4:
 ?>

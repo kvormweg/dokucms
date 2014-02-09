@@ -118,7 +118,7 @@ div.dokuwiki input.missing {
   font-size: 100%;
   border: 1px solid __border__;
   color: __text__;
-  background-color: #ffcccc;
+  background-color: #fcc;
   vertical-align: middle;
   margin: 1px;
   padding: 0.20em 0.3em;
@@ -163,7 +163,11 @@ div.dokuwiki div#draft__status {
   float: right;
   color: __text_alt__;
 }
-
+div.dokuwiki a#vorschau {
+  display: block;
+  clear: both;
+  margin-top: 1em;
+}
 /* --------- buttons ------------------- */
 
 
@@ -299,7 +303,7 @@ div.dokuwiki a.wikilink2 {
 /* ------------- Page elements ----------------- */
 
 div.dokuwiki div.preview {
-  background-color: __background_neu__;
+  background-color: __background_other__;
   margin: 0 0 0 2em;
   padding: 4px;
   border: 1px dashed __text__;

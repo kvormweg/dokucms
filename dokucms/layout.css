@@ -18,15 +18,14 @@ div.dokuwiki .header {
 }
 
 div.dokuwiki .pagename {
-   font-size: 250%;
-   font-weight: bolder;
-   color: __background_alt__;
-   text-align: left;
-   padding: 1em 0 1.05em 7.65em;
-   background: transparent url(images/__yourlogo__) no-repeat 0 0;
+  text-align: left;
+  padding: 2.5em 0 2.5em 19.5em;
+  background: transparent url(images/__yourlogo__) no-repeat 0 0;
 }
 
 div.dokuwiki .pagename a {
+  font-size: 250%;
+  font-weight: bolder;
   color: __extern__ !important;
   text-decoration: none !important;
 }
@@ -131,4 +130,3 @@ div.dokuwiki div.page {
   padding: 2.2em 1em 0 1.5em;
   background-color: transparent;
 }
-
