@@ -2,7 +2,7 @@
  * Design elements for DokuCMS Template
  *
  * @author Andreas Gohr <andi@splitbrain.org>
- * @author Anika Henke <henke@cosmocode.de>
+ * @author Anika Henke <anika@selfthinker.org>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
  */
 
@@ -130,6 +130,7 @@ div.dokuwiki textarea.edit[disabled],
 div.dokuwiki textarea.edit[readonly],
 div.dokuwiki input.edit[disabled],
 div.dokuwiki input.edit[readonly],
+div.dokuwiki input.button[disabled],
 div.dokuwiki select.edit[disabled] {
   background-color: __background_neu__!important;
   color: __text_neu__!important;
@@ -408,6 +409,12 @@ div.dokuwiki ol {
   font-weight: bold;
 }
 
+/* no bottom gap in between and smaller left margin for nested lists */
+div.dokuwiki li ul,
+div.dokuwiki li ol {
+  margin: 0 0 0 1.5em;
+}
+
 /* the list items overriding the ul/ol definition */
 div.dokuwiki .li {
   color: __text__;
@@ -415,10 +422,10 @@ div.dokuwiki .li {
   margin-bottom: 0.1em;
 }
 
-div.dokuwiki ol {list-style-type: decimal}
-div.dokuwiki ol ol {list-style-type: upper-roman}
-div.dokuwiki ol ol ol {list-style-type: lower-alpha}
-div.dokuwiki ol ol ol ol {list-style-type: lower-greek}
+div.dokuwiki ol {list-style-type: decimal;}
+div.dokuwiki ol ol {list-style-type: upper-roman;}
+div.dokuwiki ol ol ol {list-style-type: lower-alpha;}
+div.dokuwiki ol ol ol ol {list-style-type: lower-greek;}
 
 div.dokuwiki li.open {
   list-style-image: url(images/open.gif);
@@ -459,6 +466,36 @@ div.dokuwiki code {
 /* code blocks by file tag */
 div.dokuwiki pre.file {
   background-color: __background_alt__;
+}
+
+/* filenames for file and code blocks */
+div.dokuwiki dl.file,
+div.dokuwiki dl.code {
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+}
+
+div.dokuwiki dl.file dt,
+div.dokuwiki dl.code dt {
+    border: 1px dashed __border__;
+    display: inline;
+    padding: 0.1em 1em;
+    margin-left: 2em;
+}
+
+div.dokuwiki dl.code dt a,
+div.dokuwiki dl.file dt a {
+    color: __text__;
+}
+
+div.dokuwiki dl.code dt {
+    background-color: __background_other__;
+    border-bottom: 1px solid __background_other__;
+}
+
+div.dokuwiki dl.file dt {
+    background-color: __background_alt__;
+    border-bottom: 1px solid __background_alt__;
 }
 
 /* inline tables */
@@ -674,6 +711,10 @@ div.dokuwiki ul.search_quickhits li {
   width: 30%;
 }
 
+div.dokuwiki div.section_highlight {
+  background-color: __background_alt__;
+}
+
 /* ------------------ Additional ---------------------- */
 
 div.footerinc {
@@ -682,6 +723,10 @@ div.footerinc {
 .footerinc a img {
     border: 0;
 }
+.footerinc a:hover img {
+    opacity: 1;
+}
+
 
 /* ---------- AJAX quicksearch ----------- */
 
@@ -716,6 +761,10 @@ div.picker {
   width: 250px;
   border: 1px solid __border__;
   background-color: __background_alt__;
+}
+
+div.pk_hl {
+  width: 125px;
 }
 
 button.pickerbutton {
@@ -786,36 +835,6 @@ div.dokuwiki div.imagemeta img.thumb {
   margin-right: 0.1em;
 }
 
-/* ---------------  Left Menu  ----------------- */
-
-div.dokuwiki div.sidebar div.sidebar_box a {
-  font-weight: bold;
-}
-
-div.dokuwiki div.sidebar div.sidebar_box h1 {
-  height: 1.25em;
-  padding-top: 1.25em;
-  font-size: 120%;
-}
-
-div.dokuwiki div.sidebar ul.idx {
-  margin: 0;
-  padding-left: 1em;
-}
-
-div.dokuwiki div.sidebar ul.idx ul.idx {
-  margin: 0;
-  padding-left: 0.5em;
-}
-
-div.dokuwiki div.sidebar .li {
-  margin: 0;
-}
-
-div.dokuwiki div.sidebar a.idx_dir {
-  text-transform: capitalize;
-}
-
 /* other */
 th, .tocheader  {
   color: __existing__;
@@ -843,11 +862,11 @@ legend  {
 div.comment_wrapper {
   background-color: __background_neu__ !important;
 }
-	
+
 div.comment_buttons {
 	font-size: 1em  !important;
 }
-	
+
 /* nspages plugin compatibility */
 .catpageheadline {
   text-decoration: none !important;

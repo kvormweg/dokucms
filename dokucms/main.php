@@ -10,7 +10,7 @@
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
 
-// include custom template functions stolen from arctic template 
+// include custom template functions stolen from arctic template
 require_once(dirname(__FILE__).'/tpl_functions.php');
 
 ?>
@@ -97,26 +97,27 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <div class="bar" id="bar__bottom">
        <div class="bar-left" id="bar__bottomleft">
          <?php tpl_button('admin')?>
-			<?php if($ACT != 'login' && $ACT != 'logout') { ?>        
+			<?php if($ACT != 'login' && $ACT != 'logout') { ?>
 			   <?php tpl_button('login')?>&nbsp;
 			<?php }?>
 			<?php if($_SERVER['REMOTE_USER']){ ?>
 			   <?php tpl_button('subscription')?>
 			   <?php tpl_button('profile')?>
 			   <?php tpl_button('history')?>
+         <?php tpl_button('revert')?>
 			<?php }?>
-     	 <?php if($conf['tpl']['dokucms']['showbacklinks']) { ?>  
+     	 <?php if($conf['tpl']['dokucms']['showbacklinks']) { ?>
          <?php tpl_button('backlink')?>&nbsp;
      	 <?php } ?>
          &nbsp;
        </div>
        <div class="bar-right" id="bar__bottomright">
-   	 <?php if(!$_SERVER['REMOTE_USER'] && $ACT != 'login' && $ACT != 'logout') { ?> 
-     	 	<?php if(!$conf['tpl']['dokucms']['showsearch']) { ?>  
+   	 <?php if(!$_SERVER['REMOTE_USER'] && $ACT != 'login' && $ACT != 'logout') { ?>
+     	 	<?php if(!$conf['tpl']['dokucms']['showsearch']) { ?>
        		<?php tpl_searchform()?>&nbsp;
      	 	<?php }?>
    	<?php }?>
-     	<?php if($conf['tpl']['dokucms']['showsearch']) { ?>  
+     	<?php if($conf['tpl']['dokucms']['showsearch']) { ?>
          <?php tpl_searchform()?>&nbsp;
      	<?php } ?>
       <?php tpl_button('edit')?>&nbsp;
