@@ -1,8 +1,3 @@
-/**
- * CSS styles for printed output
- *
- * @author Andreas Gohr <andi@splitbrain.org>
- */
 
 body {
   font: 10pt Times,'Times New Roman',serif;
@@ -54,6 +49,7 @@ div.pagename,
 div.secedit {
   display: none;
 }
+
 
 /* --------------------- Text formating -------------------------------- */
 
@@ -112,6 +108,8 @@ img.media {
   margin: 3px;
 }
 
+/* the styles for media images are already in
+   lib/styles/all.css, these are additional styles */
 img.medialeft {
   border: 0;
   float: left;
@@ -122,6 +120,8 @@ img.mediaright {
   border: 0;
   float: right;
   margin: 0 0 0 1.5em;
+}
+img.mediacenter {
 }
 
 /* unordered lists */
@@ -216,7 +216,7 @@ a.fn_bot {
   font-weight: bold;
 }
 
-acronym {
+abbr {
   border: 0;
 }
 

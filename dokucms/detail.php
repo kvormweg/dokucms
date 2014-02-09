@@ -2,6 +2,9 @@
 /**
  * DokuWiki Image Detail Template
  *
+ * This is the template for displaying image details
+ *
+ * @link   http://dokuwiki.org/templates
  * @link   http://wiki.splitbrain.org/wiki:tpl:templates
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
