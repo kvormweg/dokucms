@@ -28,7 +28,11 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   <?php tpl_metaheaders()?>
 
   <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
-
+<!--[if lt IE 7]>
+   <style type="text/css">
+      div.page { width: 55em !important; }
+   </style>
+<![endif]-->
 </head>
 
 <body>

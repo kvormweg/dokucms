@@ -75,10 +75,10 @@ div.dokuwiki div.stylefoot div.homelink a {
   padding: 0.5em 0 0.5em 1em;
 }
 div.dokuwiki div.stylefoot div.meta {
-  float: right;
+  float: left;
   font-size: 85%;
   text-align: right;
-  padding: 0.5em 2em 0.2em 0;
+  padding: 0.5em 0.15em 0.2em 50em;
   background-color: __background__;
 }
 
@@ -97,6 +97,16 @@ div.dokuwiki div.sidebar div.sidebar_box h1 {
 div.dokuwiki div.sidebar ul.idx {
   margin: 0;
   padding-left: 1em;
+}
+
+div.dokuwiki div.sidebar ul.idx li.level1,
+div.dokuwiki div.sidebar ul.idx li.level2,
+div.dokuwiki div.sidebar ul.idx li.level3,
+div.dokuwiki div.sidebar ul.idx li.level4,
+div.dokuwiki div.sidebar ul.idx li.level5,
+div.dokuwiki div.sidebar ul.idx li.level6,
+div.dokuwiki div.sidebar ul.idx li.level7 {
+  list-style-type:none;
 }
 
 div.dokuwiki div.sidebar ul.idx ul.idx {

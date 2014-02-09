@@ -19,19 +19,17 @@ function tpl_sidebar($pos) {
     global $lang;
     global $conf;
     global $ID;
-    global $REV;
-    global $INFO;
 
     if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
     $pname = 'sidebar';
     
     $tpl = $conf['template'];
 
-    $svID  = $ID;   // save current ID
+//    $svID  = $ID;   // save current ID
 //    $svREV = $REV;  // save current REV 
 
     if($conf['tpl'][$tpl]['sidebar']== 'file')  {
-        $ns_sb = _getNsSb($svID);
+        $ns_sb = _getNsSb($ID);
         if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
             print '<div class="sidebar_box">' . DOKU_LF;
             print p_sidebar_xhtml($ns_sb,$pos) . DOKU_LF;
@@ -43,11 +41,11 @@ function tpl_sidebar($pos) {
         }
    } else {
     			print '<div class="sidebar_box">' . DOKU_LF;
-    			print '  ' . p_index_xhtml($svID,$pos) . DOKU_LF;
+    			print '  ' . p_index_xhtml($ID,$pos) . DOKU_LF;
     			print '</div>' . DOKU_LF;
 	 }	
     // restore ID and REV
-    $ID  = $svID;
+//    $ID  = $svID;
 //    $REV = $svREV;
 }
 
@@ -128,7 +126,7 @@ function p_index_xhtml($ns,$pos) {
   }  
   $data = $data2;
 # print index with empty items removed  
-  print preg_replace('#<li class="level[0-9]" style="list-style-type:none;"><div class="li"></div></li>#','',preg_replace('/li class="level(\d)"/', 'li class="level$1" style="list-style-type:none;"', html_buildlist($data,'idx','_html_list_index','html_li_index')));
+  print html_buildlist($data,'idx','_html_list_index','html_li_index');
 }
 
 /**
@@ -158,7 +156,6 @@ function dokucms_pageinfo(){
   global $conf;
   global $lang;
   global $INFO;
-  global $REV;
   global $ID;
   
   // return if we are not allowed to view the page
