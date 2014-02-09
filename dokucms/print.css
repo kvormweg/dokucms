@@ -139,7 +139,7 @@ ol {
 }
 ol ol {
     margin: 0 0 0.5em 1.5em;
-
+}
 div.dokuwiki li ul {
   margin-bottom: 0;
 }
@@ -256,7 +256,7 @@ table.inline td {
 	font-size: 0.3em;
 }
 
-#dw__toc, .footerinc, .header, .user { 
-	display: none; 
+#dw__toc, .footerinc, .header, .user {
+	display: none;
 }
 
