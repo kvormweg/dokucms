@@ -8,6 +8,7 @@
 
 $lang['sidebar'] = 'Inhalt des Sidebars: Index oder Datei';
 $lang['cleanindex'] = 'Index bereinigen';
+$lang['cleanindexlist'] = 'Index um weitere Namensräume bereinigen (komma-separierte Liste)';
 $lang['showsearch'] = 'Suchfeld anzeigen, wenn angemeldet';
 $lang['showbacklinks'] = 'Backlink-Knopf anzeigen';
 $lang['showmedia'] = 'Mediamanager-Button anzeigen, wenn nicht angemeldet';
