@@ -14,13 +14,13 @@ div.dokuwiki .stylehead {
 
 div.dokuwiki .header {
   height: 6.4em;
-  background: __background_alt__ url(images/__imgblend__) repeat-y 0 0;
+  background: __background_alt__ __imgblend__ repeat-y 0 0;
 }
 
 div.dokuwiki .pagename {
   text-align: left;
   padding: 2.5em 0 2.5em 19.5em;
-  background: transparent url(images/__yourlogo__) no-repeat 0 0;
+  background: transparent __yourlogo__ no-repeat 0 0;
 }
 
 div.dokuwiki .pagename a {
