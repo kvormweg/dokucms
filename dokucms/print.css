@@ -256,7 +256,7 @@ table.inline td {
 	font-size: 0.3em;
 }
 
-.toc, .footerinc, .header, .user { 
+#dw__toc, .footerinc, .header, .user { 
 	display: none; 
 }
 
