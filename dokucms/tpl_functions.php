@@ -112,19 +112,19 @@ function p_index_xhtml($ns,$pos) {
 
   $data = array();
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
-  $data2 = array();
+  $i = 0;
   foreach($data as $item) {
     if($conf['tpl'][$tpl]['cleanindex']) {
       if($item['id'] == 'playground' or $item['id'] == 'wiki') {
-        continue;
+        unset($data[$i]);
       }
     }
     if($item['id'] == 'sidebar' or $item['id'] == $start or preg_match('/:'.$start.'$/',$item['id'])) {
-      continue;
+      unset($data[$i]);
     }
-    $data2[] = $item;
+    $i++;
   }  
-  $data = $data2;
+
 # print index with empty items removed  
   print html_buildlist($data,'idx','_html_list_index','html_li_index');
 }

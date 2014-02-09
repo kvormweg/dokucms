@@ -75,10 +75,10 @@ div.dokuwiki div.stylefoot div.homelink a {
   padding: 0.5em 0 0.5em 1em;
 }
 div.dokuwiki div.stylefoot div.meta {
-  float: left;
+  float: right;
   font-size: 85%;
   text-align: right;
-  padding: 0.5em 0.15em 0.2em 50em;
+  padding: 0.5em 1.15em 0.2em 0;
   background-color: __background__;
 }
 
@@ -164,10 +164,10 @@ div.dokuwiki div.wrap {
 
 /* the document */
 div.dokuwiki div.page {
-  float: left;
+  margin-left: 0em;  
   margin: 0;
-  width: 100%;
-  max-width: 55em;
+/*  width: 100%; */
+  max-width: __content_width__;
   padding: 1.25em 1em 0 3.25em;
   overflow: hidden;
   background-color: transparent;
