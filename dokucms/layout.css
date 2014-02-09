@@ -1,0 +1,118 @@
+/**
+ * Tableless Layout for DokuCMS template
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author moraes <moraes@tipos.com.br>
+ * @author Klaus Vormweg <klaus.vormweg@gmx.de>
+ */
+/* -------------- top row --------------- */
+div.dokuwiki .stylehead {
+  background: __background_alt__;
+  min-width: 65em;
+  width: 100%;
+}
+
+div.dokuwiki .header {
+  height: 6.5em;
+  background: __background_alt__ url(images/__imgblend__) repeat-y 0 0;
+}
+
+div.dokuwiki .pagename {
+  height: 2em;
+  float: left;
+  font-size: 250%;
+  font-weight: bolder;
+  color: __background_alt__;
+  text-align: left;
+  vertical-align: middle;
+  padding: 0.6em 0 0 7.65em;
+  background: transparent url(images/__yourlogo__) no-repeat bottom left;
+}
+
+div.dokuwiki .pagename a {
+  color: __extern__ !important;
+  text-decoration: none !important;
+}
+
+/* ---------------  bottom bar ---------------- */
+div.dokuwiki .bar {
+  float: left;
+  background-color: __background_neu__;
+  width: 100%;
+  clear: both;
+  min-width: 60em;
+}
+
+div.dokuwiki .bar-left {
+  float: left;
+  padding: 0.1em 0.15em;
+}
+
+div.dokuwiki .bar-right {
+  float: right;
+  text-align: right;
+  padding: 0.1em 0.15em;
+}
+
+div.dokuwiki #bar__bottom {
+  margin-bottom:0.5em;
+}
+
+/* ------------- File Metadata ----------------------- */
+
+div.dokuwiki div.stylefoot {
+  min-width: 65em;
+  width: 100%;
+  clear: both;
+  color: __text_alt__;
+  height: 1.75em;
+}
+
+div.dokuwiki div.stylefoot div.homelink {
+  float: left;
+  width: 16em;
+  background-color: __background_alt__;
+}
+div.dokuwiki div.stylefoot div.homelink a {
+  display: block;
+  float: left;
+  padding: 0.5em 0 0.5em 1em;
+}
+div.dokuwiki div.stylefoot div.meta {
+  float: right;
+  font-size: 85%;
+  text-align: right;
+  padding: 0.5em 2em 0.2em 0;
+  background-color: __background__;
+}
+
+
+/* the document area */
+
+div.dokuwiki div.wrap {
+  width: 100%;
+  overflow: hidden;
+  min-width: 60em;
+  background: __background_alt__  url(images/fc.png) repeat-y 16em 0;
+}
+
+/* the sidebar */
+div.dokuwiki div.sidebar {
+  float: left;
+  width: 16em;
+  background-color: __background_alt__;
+}
+
+div.dokuwiki div.sidebar div.sidebar_box {
+  padding: 1.5em 0.5em 0 0.5em;
+}
+
+
+/* the document */
+div.dokuwiki div.page {
+  margin-left: 18em;
+  max-width: 60em;
+  padding: 0.2em 1em 0 1em;
+  background-color: transparent;
+}
+
