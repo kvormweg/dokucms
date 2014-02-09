@@ -31,7 +31,7 @@ div.dokuwiki p,
 div.dokuwiki blockquote,
 div.dokuwiki table,
 div.dokuwiki pre {
-  margin: 0 0 1em 0;
+  margin: 1em 0 0 0;
 }
 
 div.dokuwiki hr {
@@ -826,4 +826,11 @@ legend  {
   font-weight: bold;
   background-color: __background_alt__;
   padding: 0 0.5em;
+}
+.license  {
+  clear:both;
+  text-align: center;
+  color: __text__ !important;
+  padding: 0 0.5em 1em 0.5em;
+  font-size: 75%;
 }

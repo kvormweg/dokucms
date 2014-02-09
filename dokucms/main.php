@@ -122,6 +122,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     </div>
 
   </div>
+	<?php tpl_license(false);?>
 
 </div>
 
