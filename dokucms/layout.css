@@ -8,7 +8,7 @@
 /* -------------- top row --------------- */
 div.dokuwiki .stylehead {
   background: __background_alt__;
-  min-width: 80.5em;
+  min-width: 75.5em;
   width: 100%;
 }
 
@@ -36,7 +36,7 @@ div.dokuwiki .bar {
   background-color: __background_neu__;
   width: 100%;
   clear: both;
-  min-width: 80.5em;
+  min-width: 75.5em;
 }
 
 div.dokuwiki .bar-left {
@@ -57,7 +57,7 @@ div.dokuwiki #bar__bottom {
 /* ------------- File Metadata ----------------------- */
 
 div.dokuwiki div.stylefoot {
-  min-width: 80.5em;
+  min-width: 75.5em;
   width: 100%;
   clear: both;
   color: __text_alt__;
@@ -148,7 +148,7 @@ div.dokuwiki div.sidebar div.level5, div.dokuwiki div.sidebar div.level4, div.do
 div.dokuwiki div.wrap {
   width: 100%;
   overflow: hidden;
-  min-width: 80.5em;
+  min-width: 75.5em;
   background: __background_alt__  url(images/fc.png) repeat-y 16em 0;
 }
 
@@ -156,7 +156,9 @@ div.dokuwiki div.wrap {
 div.dokuwiki div.page {
   float: left;
   margin: 0;
-  max-width: 60em;
+  width: 100%;
+  max-width: 55em;
   padding: 1.25em 1em 0 3.25em;
+  overflow: hidden;
   background-color: transparent;
 }
