@@ -15,15 +15,11 @@ body {
   font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
   background-color: __background__;
   color: __text__;
+  line-height: 1.4em;
 }
 
 div.dokuwiki table {
   font-size: 100%;
-}
-
-div.dokuwiki tr,
-div.dokuwiki td,
-div.dokuwiki th {
 }
 
 div.dokuwiki img {
@@ -384,7 +380,6 @@ div.dokuwiki div.level5 {margin-left: 2.6em;}
 
 /* unordered lists */
 div.dokuwiki ul {
-  line-height: 1.5em;
   list-style-type: square;
   list-style-image: none;
   margin: 0 0 0.5em 1.5em;
@@ -393,7 +388,6 @@ div.dokuwiki ul {
 
 /* ordered lists */
 div.dokuwiki ol {
-  line-height: 1.5em;
   list-style-image: none;
   margin: 0 0 0.5em 1.5em;
   color: __text__;
@@ -404,6 +398,7 @@ div.dokuwiki ol {
 div.dokuwiki .li {
   color: __text__;
   font-weight: normal;
+  margin-bottom: 0.1em;
 }
 
 div.dokuwiki ol {list-style-type: decimal}
@@ -413,12 +408,10 @@ div.dokuwiki ol ol ol ol {list-style-type: lower-greek}
 
 div.dokuwiki li.open {
   list-style-image: url(images/open.gif);
-    /*list-style-type: circle;*/
 }
 
 div.dokuwiki li.closed {
   list-style-image: url(images/closed.gif);
-    /*list-style-type: disc;*/
 }
 
 div.dokuwiki blockquote {
@@ -479,7 +472,6 @@ div.dokuwiki div.toc {
   float: right;
   width: 17em;
   font-size: 80%;
-/*  clear: both; */
 }
 
 div.dokuwiki div.tocheader {
@@ -674,12 +666,7 @@ div.footerinc {
     text-align: center;
 }
 .footerinc a img {
-    opacity: 0.5;
     border: 0;
-}
-
-.footerinc a:hover img {
-    opacity: 1;
 }
 
 /* ---------- AJAX quicksearch ----------- */
@@ -688,7 +675,6 @@ div.dokuwiki div.ajax_qsearch {
   position: absolute;
   right: 237px;;
   width: 200px;
-  opacity: 0.9;
   display: none;
   font-size: 80%;
   line-height: 1.2em;
@@ -806,6 +792,10 @@ div.dokuwiki div.sidebar ul.idx {
 div.dokuwiki div.sidebar ul.idx ul.idx {
   margin: 0;
   padding-left: 0.5em;
+}
+
+div.dokuwiki div.sidebar .li {
+  margin: 0;
 }
 
 div.dokuwiki div.sidebar a.idx_dir {
