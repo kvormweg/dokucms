@@ -84,7 +84,7 @@ div.dokuwiki textarea.edit {
   background-color: __background__;
   border: 1px solid __border__;
   padding: 0.3em 0 0 0.3em;
-  width: 100%;
+  width: 95%;
 }
 
 /* nice alphatransparency background except for IE <7 */
@@ -141,6 +141,7 @@ div.dokuwiki div.toolbar,
 div.dokuwiki div#wiki__editbar {
    margin: 2px 0;
    text-align: left;
+   width: 95%;
 }
 div.dokuwiki div#size__ctl {
    float: right;

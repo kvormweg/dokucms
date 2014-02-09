@@ -75,7 +75,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   </div>
   <?php } else { ?>
   <div class="wrap" style="background-color: #fff;">
-     <div class="page" style="margin-left:0; max-width: 78em;">
+     <div class="page" style="margin-left:0; max-width: 75em;">
        <?php tpl_content(); ?>
      </div>
   </div>
