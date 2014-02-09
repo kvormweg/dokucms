@@ -39,6 +39,7 @@ div.dokuwiki hr {
   border-top: 1px solid __border__;
   text-align: center;
   height: 0px;
+  margin: 0 0 1em 0;
 }
 
 div.dokuwiki div.nothing {
@@ -365,7 +366,7 @@ div.dokuwiki h5 {
     background-color: inherit;
     font-size: 100%;
     font-weight: bold;
-    margin: 0 0 0.2em 0;
+    margin: 0.5em 0 0.25em 0;
     padding: 0;
 }
 
@@ -378,10 +379,10 @@ div.dokuwiki h5 {font-size: 110%;}
 
 /* indent different sections */
 div.dokuwiki div.level1 {margin-left: 0.1em;}
-div.dokuwiki div.level2 {margin-left: 1.1em;}
-div.dokuwiki div.level3 {margin-left: 1.6em;}
-div.dokuwiki div.level4 {margin-left: 2.1em;}
-div.dokuwiki div.level5 {margin-left: 2.6em;}
+div.dokuwiki div.level2 {margin-left: 0.6em;}
+div.dokuwiki div.level3 {margin-left: 1.1em;}
+div.dokuwiki div.level4 {margin-left: 1.6em;}
+div.dokuwiki div.level5 {margin-left: 2.1em;}
 
 /* unordered lists */
 div.dokuwiki ul {
