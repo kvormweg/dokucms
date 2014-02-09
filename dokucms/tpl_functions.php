@@ -15,7 +15,7 @@ if (!defined('DOKU_INC')) die();
  * Prints the sidebars
  *
  */
-function tpl_sidebar($pos) {
+function _tpl_sidebar() {
     global $lang;
     global $conf;
     global $ID;
@@ -25,28 +25,22 @@ function tpl_sidebar($pos) {
     
     $tpl = $conf['template'];
 
-//    $svID  = $ID;   // save current ID
-//    $svREV = $REV;  // save current REV 
-
     if($conf['tpl'][$tpl]['sidebar']== 'file')  {
         $ns_sb = _getNsSb($ID);
         if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
             print '<div class="sidebar_box">' . DOKU_LF;
-            print p_sidebar_xhtml($ns_sb,$pos) . DOKU_LF;
+            print p_sidebar_xhtml($ns_sb) . DOKU_LF;
             print '</div>' . DOKU_LF;
          } elseif(@file_exists(wikiFN($pname)) && auth_quickaclcheck($pname) >= AUTH_READ) {
             print '<div class="sidebar_box">' . DOKU_LF;
-            print p_sidebar_xhtml($pname,$pos) . DOKU_LF;
+            print p_sidebar_xhtml($pname) . DOKU_LF;
             print '</div>' . DOKU_LF;
         }
    } else {
     			print '<div class="sidebar_box">' . DOKU_LF;
-    			print '  ' . p_index_xhtml($ID,$pos) . DOKU_LF;
+    			print '  ' . p_index_xhtml($ID) . DOKU_LF;
     			print '</div>' . DOKU_LF;
 	 }	
-    // restore ID and REV
-//    $ID  = $svID;
-//    $REV = $svREV;
 }
 
 /**
@@ -72,7 +66,7 @@ function _getNsSb($id) {
  * shows a edit button if the user has enough rights
  *
  */
-function p_sidebar_xhtml($sb,$pos) {
+function p_sidebar_xhtml($sb) {
   global $conf;
   $tpl = $conf['template'];
   $data = p_wiki_xhtml($sb,'',false);
@@ -82,7 +76,7 @@ function p_sidebar_xhtml($sb,$pos) {
   // strip TOC
   $data = preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
   // replace headline ids for XHTML compliance
-  $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3', $data);
+  $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_left_\2\3', $data);
   return ($data);
 }
 
@@ -90,7 +84,7 @@ function p_sidebar_xhtml($sb,$pos) {
  * Renders the Index
  *
  */
-function p_index_xhtml($ns,$pos) {
+function p_index_xhtml($ns) {
   require_once(DOKU_INC.'inc/search.php');
   global $conf;
   global $ID;
@@ -152,7 +146,7 @@ function _html_list_index($item){
 }
 
 # dokucms modified version of pageinfo 
-function dokucms_pageinfo(){
+function _tpl_pageinfo(){
   global $conf;
   global $lang;
   global $INFO;
@@ -162,7 +156,7 @@ function dokucms_pageinfo(){
   if (!auth_quickaclcheck($ID)) { return; }
   
   // prepare date and path
-  $date = strftime($conf['dformat'],$INFO['lastmod']);
+  $date = dformat($INFO['lastmod']);
 
   // print it
   if($INFO['exists']){

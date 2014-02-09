@@ -67,7 +67,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'login' && $ACT != 'logout' && $ACT != 'profile' && $ACT != 'revisions') { ?>
   <div class="wrap">
      <div class="sidebar">
-       <?php tpl_sidebar('left'); ?>
+       <?php _tpl_sidebar(); ?>
      </div>
      <div class="page">
        <?php tpl_content(); ?>
@@ -91,7 +91,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       </div>
 
     <div class="meta">
-    <?php dokucms_pageinfo(); ?>
+    <?php _tpl_pageinfo(); ?>
     </div>
     <?php } else { ?>
     <div class="meta">
