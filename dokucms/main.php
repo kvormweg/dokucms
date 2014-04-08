@@ -14,12 +14,10 @@ if (!defined('DOKU_INC')) die();
 require_once(dirname(__FILE__).'/tpl_functions.php');
 
 echo '
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="', $conf['lang'], '"
- lang="', $conf['lang'], '" dir="', $lang['direction'], '">
+<!DOCTYPE html>
+<html lang="', $conf['lang'], '" dir="', $lang['direction'], '">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
   <title>
 ';
 tpl_pagetitle();
@@ -41,7 +39,7 @@ echo '
 ';
 html_msgarea();
 echo '
-  <div class="stylehead">
+  <header class="stylehead">
 
     <div class="header">
       <div class="pagename">
@@ -68,16 +66,16 @@ if($conf['youarehere']){
 ';
 }
 echo '
-  </div>
+  </header>
 ';
 tpl_flush();
 
 if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'login' && $ACT != 'logout' && $ACT != 'profile' && $ACT != 'revisions') {
   echo '  <div class="wrap">
-     <div class="sidebar">
+     <nav class="sidebar">
 ';
   _tpl_sidebar(); 
-  echo '   </div>
+  echo '   </nav>
      <div class="page">
 ';
   tpl_content(); 
@@ -95,7 +93,7 @@ if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $
 }
 tpl_flush();
 echo '
-  <div class="stylefoot">
+  <footer class="stylefoot">
 ';
 if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'login' && $ACT != 'logout' && $ACT != 'profile' && $ACT != 'revisions') {
   echo '     <div class="homelink">
@@ -159,7 +157,7 @@ echo '&nbsp;
       <div class="clearer"></div>
     </div>
 
-  </div>
+  </footer>
 ';
 tpl_license(false);
 echo '
