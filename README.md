@@ -68,7 +68,8 @@ The template has six configuration options:
 
 Backup your DOKUWIKI_ROOT/lib/tpl/dokucms/style.ini. Unpack the file in DOKUWIKI_ROOT/lib/tpl/. This will overwrite the current template with the new version. Overwrite the delivered style.ini with your backup copy, if there were no changes to style.ini content. I will explicitly list style.ini changes in the changelog.
 Otherwise you will have to check for differences between your backup copy and the default style.ini. I recommend meld for that purpose.
-Recommendation
+
+## Recommendation
 
 Clean the cache (DOKUWIKI_ROOT/data/cache) after installation or update of this template.
 
