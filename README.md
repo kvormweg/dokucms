@@ -8,7 +8,8 @@ The template offers a sidebar with either an index or content from a wiki page. 
 ## License
 
 This template is published under the GNU General Public Licence (GPL) V2.
-Special Thanks
+
+## Special Thanks
 
 Thanks to Andreas Gohr and fellow programmers for creating such a wonderful tool.
 Thanks to Michael Klier for the Arctic template
