@@ -6,6 +6,11 @@
  * @author moraes <moraes@tipos.com.br>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
  */
+/* -------------- container --------------- */
+div.dokuwiki {
+  max-width: 80em; 
+  margin: 0 auto;
+}
 /* -------------- top row --------------- */
 div.dokuwiki .stylehead {
   background: __background_alt__;
@@ -63,12 +68,14 @@ div.dokuwiki .stylefoot  {
   clear: both;
   color: __text_alt__;
   height: 3em;
+  background-color: #fff;
 }
 
 div.dokuwiki .stylefoot div.homelink {
   float: left;
   width: 16em;
   background-color: __background_alt__;
+  min-height: 8px;
 }
 div.dokuwiki .stylefoot div.homelink a {
   display: block;
@@ -81,6 +88,7 @@ div.dokuwiki .stylefoot div.meta {
   text-align: right;
   padding: 0.5em 1.15em 0.2em 0;
   background-color: __background__;
+  min-height: 8px;
 }
 
 /* ---------------  Left Menu  ----------------- */
@@ -130,7 +138,8 @@ div.dokuwiki .sidebar {
   overflow: hidden;
 }
 
-div.dokuwiki .sidebar  div.secedit input.button {
+div.dokuwiki .sidebar div.secedit input.button,
+div.dokuwiki .sidebar div.secedit button {
   background-color: __background_alt__;
   color: #ccc;
   float: left;
@@ -165,9 +174,7 @@ div.dokuwiki div.wrap {
 
 /* the document */
 div.dokuwiki div.page {
-  margin-left: 0em;  
-  margin: 0;
-/*  width: 100%; */
+  margin: 0 0 0 16em;
   max-width: __content_width__;
   padding: 1.25em 1em 0 3.25em;
   overflow: hidden;
@@ -181,7 +188,7 @@ html { font-size: 100.01%; }
 
 body {
   font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
-  background-color: __background__;
+  background-color: #ccc;
   color: __text__;
   line-height: 1.4em;
   text-align: left;
@@ -361,7 +368,7 @@ div.dokuwiki a#vorschau {
 
 
 div.dokuwiki input.button,
-div.dokuwiki button.button {
+div.dokuwiki button {
   border: 1px solid __border__;
   color: __text_alt__;
   background-color: __background__;
@@ -376,16 +383,17 @@ div.dokuwiki button.button {
 
 /* nice alphatransparency background except for IE <7 */
 html>body div.dokuwiki input.button,
-html>body div.dokuwiki button.button {
+html>body div.dokuwiki button {
   background:  __background__ url(images/buttonshadow.png) repeat-x bottom;
 }
 
 * html div.dokuwiki input.button,
-* html div.dokuwiki button.button {
+* html div.dokuwiki button {
   height: 1.5em;
 }
 
-div.dokuwiki div.secedit input.button {
+div.dokuwiki div.secedit input.button,
+div.dokuwiki div.secedit button {
   border: 1px solid __border__;
   color: __text__;
   background-color: __background__;
