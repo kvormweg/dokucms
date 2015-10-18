@@ -60,7 +60,9 @@ tpl_flush();
 if($ACT != 'diff' and $ACT != 'edit' and $ACT != 'preview' and $ACT != 'admin' and 
    $ACT != 'login' and $ACT != 'logout' and $ACT != 'profile' and $ACT != 'revisions') {
   echo '  <div class="wrap">
-     <nav class="sidebar">',"\n";
+     <nav class="sidebar">
+     <input type="checkbox" id="hamburger" class="hamburger" />
+     <label for="hamburger" class="hamburger" title="Menu">&#9776; <span class="vishelp">Menu</span></label>',"\n";
   _tpl_sidebar(); 
   echo '   </nav>
      <div class="page">',"\n";

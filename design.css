@@ -8,7 +8,7 @@
  */
 /* -------------- container --------------- */
 div.dokuwiki {
-  max-width: 80em; 
+  max-width: __content_width__; 
   margin: 0 auto;
 }
 /* -------------- top row --------------- */
@@ -175,7 +175,6 @@ div.dokuwiki div.wrap {
 /* the document */
 div.dokuwiki div.page {
   margin: 0 0 0 16em;
-  max-width: __content_width__;
   padding: 1.25em 1em 0 3.25em;
   overflow: hidden;
   background-color: transparent;
@@ -752,24 +751,24 @@ div.dokuwiki #dw__toc h3 {
 }
 
 div.dokuwiki .toggle strong {
-    border: 0.4em solid __background_alt__;
-    float: right;
-    display: block;
-    margin: 0.4em 3px 0 0;
+  border: 0.4em solid __background_alt__;
+  float: right;
+  display: block;
+  margin: 0.4em 3px 0 0;
 }
 
 div.dokuwiki .toggle span {
-    display: none;
+  display: none;
 }
 
 div.dokuwiki .toggle.closed strong {
-    margin-top: 0.4em;
-    border-top: 0.4em solid __text__;
+  border-top: 0.4em solid __text__;
+  margin-top: 0.4em;
 }
 
 div.dokuwiki .toggle.open strong {
-    margin-top: 0;
-    border-bottom: 0.4em solid __text__;
+  margin-top: 0;
+  border-bottom: 0.4em solid __text__;
 }
 
 div.dokuwiki #dw__toc > div {
@@ -1121,4 +1120,77 @@ div.comment_buttons {
   font-weight: bold;
   margin: 0.5em 0 0.25em 0;
   padding: 0;
+}
+/* a11y */
+.vishelp {
+  display: none;
+}
+
+/* hamburger */
+input#hamburger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+/* responsiveness */
+}
+label[for="hamburger"] {
+  display: none;
+}
+
+@media (max-width: 964px) {
+  div#dw__toc, div.plugin_loadskin, div.mainmenu ul {
+    display: none;
+  }
+
+  div.dokuwiki, div.dokuwiki .stylehead, div.dokuwiki .bar,
+  div.dokuwiki footer.stylefoot, div.dokuwiki div.wrap {
+    min-width: 0;
+  }
+
+  div.dokuwiki {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 579px) {
+  div.dokuwiki nav.sidebar div.sidebar_box, div.dokuwiki footer.stylefoot div.homelink, form#dw__search {
+    display: none;  
+  }
+  div.dokuwiki nav.sidebar {
+    width: 1.5em;   
+    background: none 0 0 #fff;
+    padding: 0.5em 0 0 0.5em;
+  }
+  div.dokuwiki div.page {
+    margin-left: 0;
+  }
+  div.dokuwiki div.wrap {
+    background: none 0 0 no-repeat #fff;  
+  }
+  div.dokuwiki header.stylehead div.header div.pagename {
+    padding-left: 12.5em;  
+  }
+  
+  label[for="hamburger"] {
+    cursor: pointer;
+    font-size: 150%;
+    display: inline;
+    color: #000;
+  }
+  #hamburger:checked ~ div.sidebar_box {
+    display: block;
+    position: absolute;
+    top: 10em;
+    left: 1.5em;
+    background-color: #ddd;
+    padding: 1em;
+    width: auto;
+    max-width: 20.5em;
+    visibility: visible;
+    opacity: 1
+  }
+
+	div.dokuwiki img.medialeft, div.dokuwiki img.mediaright {
+	  float: none;
+	}
 }

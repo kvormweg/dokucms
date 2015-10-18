@@ -33,7 +33,7 @@ Two general looks are included and may be switched by editing the style.ini.
 ````
 ;dokucms special variables
 ;---------------------------------------------------------------------------
-__content_width__ = 60em;
+__content_width__ = 80em;
 ; red look
 ; activate either these four lines or the four lines below
 ;__text__           = "#300"
@@ -50,7 +50,7 @@ __background_alt__ = "#119"
 ````
 By commenting either the "red" or "blue" lines (with a semicolon!) you can switch the looks.
 
-From version 0.4.4 you can define the maximum width (`__content_width__`) of the content area (page width minus sidebar column). All CSS distance units apply. The smallest possible value is 700 pixel (55em). The minimum width of the entire page is 950 pixel. The maximum value can be as high as you like. High values result in long lines on large monitors which can be hard to read.
+From version 0.4.4 you can define the maximum width (`__content_width__`) of the page. All CSS distance units apply. The smallest possible value is 950 pixel (70em). The maximum value can be as high as you like. High values result in long lines on large monitors which can be hard to read.
 
 If you want to use another logo, prepare a picture with max dimension of 230 pixel width and 92 pixel height. Copy this picture into the image folder of the template. Edit the (activated) __yourlogo__ line in the style.ini accordingly.
 

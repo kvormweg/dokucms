@@ -1,7 +1,7 @@
 base     dokucms
 author   Klaus Vormweg
 email    klaus.vormweg@gmx.de
-date     2015-10-11
+date     2015-10-18
 name     DokuCMS Template
 desc     A template for using DokuWiki as a CMS
 url      http://www.tuhh.de/~psvkv/dokucms/index.html
