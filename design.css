@@ -20,8 +20,11 @@ div.dokuwiki .stylehead {
 
 div.dokuwiki .header {
   height: 6.4em;
-  background: __background_alt__ __imgblend__ repeat-y 0 0;
-}
+  background: -webkit-linear-gradient(left, #fff, #fff, __background_alt__);
+  background: -o-linear-gradient(right, #fff, #fff, __background_alt__);
+  background: -moz-linear-gradient(right, #fff, #fff, __background_alt__);
+  background: linear-gradient(to right, #fff, #fff, __background_alt__);
+} 
 
 div.dokuwiki .pagename {
   text-align: left;
