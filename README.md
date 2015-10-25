@@ -14,6 +14,7 @@ This template is published under the GNU General Public Licence (GPL) V2.
 Thanks to Andreas Gohr and fellow programmers for creating such a wonderful tool.
 Thanks to Michael Klier for the Arctic template
 Thanks to the users of this template for hints and ideas how to make this template more usable.
+The Hamburger menu without javascript inspired by Austin Wulf (http://www.sitepoint.com/pure-css-off-screen-navigation-menu/)
 
 ## Installation
 
@@ -37,7 +38,6 @@ __content_width__ = 80em;
 ; red look
 ; activate either these four lines or the four lines below
 ;__text__           = "#300"
-;__imgblend__ = blend_red.png
 ;__yourlogo__ = flower_red.png
 ;__background_alt__ = "#911"
 
@@ -45,7 +45,6 @@ __content_width__ = 80em;
 ; activate either these four lines or the four lines above
 __text__           = "#003"
 __yourlogo__ = flower_blue.png
-__imgblend__ = blend_blue.png
 __background_alt__ = "#119"
 ````
 By commenting either the "red" or "blue" lines (with a semicolon!) you can switch the looks.
@@ -76,4 +75,4 @@ Clean the cache (DOKUWIKI_ROOT/data/cache) after installation or update of this 
 
 ## Browser compatibility
 
-This template works well with current Opera, Firefox, Google Chrome and Internet Explorer (from Version 8 upwards). Safari has a problem displaying the color blend in the page header correctly, but works otherwise. With IE6 all functions work, but there are some display faults.
+This template works well with all current browsers that support HTML5 and CSS3.
